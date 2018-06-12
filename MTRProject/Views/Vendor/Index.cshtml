@@ -1,0 +1,58 @@
+﻿@model IEnumerable<MTRProject.Models.Vendor>
+
+
+<table class="table">
+    <thead>
+        <tr>
+            
+            <th>
+                Name
+            </th>
+            <th>
+                Phone
+            </th>
+            <th>
+                Login Name
+            </th>
+            <th>
+                Login Password
+            </th>
+            <th>
+                Comment
+            </th>
+            <th>
+                Actions
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Phone)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.LoginName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.LoginPassword)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Comment)
+                </td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.VendorID" class="btn btn-warning active">Edit</a>
+
+                </td>
+                <td>
+                    <a asp-action="Delete" asp-route-id="@item.VendorID" class="btn btn-danger active">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+<a asp-area="" asp-controller="Vendor" asp-action="Create" class="btn btn-primary">Add Vendor</a>

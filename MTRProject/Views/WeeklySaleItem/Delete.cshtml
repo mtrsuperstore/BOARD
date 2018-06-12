@@ -1,0 +1,59 @@
+﻿@model MTRProject.Models.WeeklySaleItem
+
+<body>
+    <h3>Are you sure you want to delete this?</h3>
+    <div>
+        <h4>Sale Item</h4>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                Item Number
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.ItemNumber)
+            </dd>
+            <dt>
+                Item Name
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.ItemName)
+            </dd>
+            <dt>
+                Cost
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.Cost)
+            </dd>
+            <dt>
+                Sale Price
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.SalePrice)
+            </dd>
+            <dt>
+                Commission Rate
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.CommissionRate)
+            </dd>
+            <dt>
+                 Sale Start
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.SaleStart)
+            </dd>
+            <dt>
+                Sale End
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.SaleEnd)
+            </dd>
+
+        </dl>
+        <form asp-action="Delete">
+            <input type="hidden" asp-for="WeeklySaleItemID" />
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            <a asp-action="Index">Back to List</a>
+        </form>
+    </div>
+</body>

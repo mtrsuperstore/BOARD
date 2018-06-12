@@ -1,0 +1,55 @@
+﻿@model MTRProject.Models.Sale
+
+
+
+
+
+
+    @*<div class="d-flex align-items-center flex-column justify-content-center h-100 text-white text-black-label" id="header">*@
+        <h2>Add a New Sale</h2>
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="SaleTotal" class="control-label text-black">Sale Total</label>
+                <input asp-for="SaleTotal" class="form-control" />
+                <span asp-validation-for="SaleTotal" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DateEntered" class="control-label">Date Entered</label>
+                <input asp-for="DateEntered" type="date" class="form-control" />
+                <span asp-validation-for="DateEntered" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="SaleDate" class="control-label">Sale Date</label>
+                <input asp-for="SaleDate" type="date" class="form-control" />
+                <span asp-validation-for="SaleDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-default" />
+                <a asp-action="Index" class="btn btn-default">Back to List</a>
+            </div>
+        </form>
+        
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <div>
+        
+    </div>
+
+    @section Scripts {
+        @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    }

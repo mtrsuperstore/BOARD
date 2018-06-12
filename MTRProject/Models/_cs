@@ -1,0 +1,20 @@
+﻿using Microsoft.AspNetCore.Identity;
+using MTRProject.Models;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
+
+
+namespace MTRProject.Models
+{
+    public class User : IdentityUser
+    {
+        public int UserID { get; set; }
+        public string FirstName { get; set; }
+        public string LastName { get; set; }
+        
+        private List<Customer> customers = new List<Customer>();
+        public List<Customer> Customers { get { return customers; } }
+    }
+}

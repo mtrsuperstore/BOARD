@@ -1,0 +1,83 @@
+﻿@model List<MTRProject.Models.SummaryViewModel>
+
+<table class="table ">
+    <thead>
+        <tr>
+            <th>
+            </th>
+            @foreach (var s in Model)
+            {
+
+                <th>
+                    @s.TheRep.FirstName
+                </th>
+            }
+        </tr>
+    </thead>
+
+    <tbody>
+        <tr>
+            <td>
+                Today:
+            </td>
+            @foreach (var s in Model)
+            {
+                <td>
+                    @s.TodayTotal
+                </td>
+            }
+        </tr>
+        <tr>
+            <td>
+                Current Week:
+            </td>
+            @foreach (var s in Model)
+            {
+                <td>
+                    @s.ThisWeekTotal
+                </td>
+            }
+        </tr>
+        <tr>
+            <td>
+                Previous Week:
+            </td>
+            @foreach (var s in Model)
+            {
+                <td>
+                    @s.LastWeekTotal
+                </td>
+            }
+        </tr>
+        <tr>
+            <td>
+                Current Month:
+            </td>
+            @foreach (var s in Model)
+            {
+                <td>
+                    @s.ThisMonthTotal
+                </td>
+            }
+        </tr>
+        @*<tr>
+            <td>
+                Last Year Month:
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Current Week:
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Distance:
+            </td>
+        </tr>*@
+
+    </tbody>
+
+</table>
+
+

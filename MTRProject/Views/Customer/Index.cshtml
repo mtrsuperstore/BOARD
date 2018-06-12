@@ -1,0 +1,62 @@
+﻿@model List<MTRProject.Models.CustomerViewModel>
+
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                First Name
+            </th>
+            <th>
+                Last Name
+            </th>
+            <th>
+                Department Name
+            </th>
+            <th>
+                Email
+            </th>
+            <th>
+                Phone
+            </th>
+            <th>
+                Comment
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TheCustomer.FirstName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TheCustomer.LastName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TheCustomer.DeptName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TheCustomer.Email)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TheCustomer.Phone)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TheCustomer.Comment)
+                </td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.TheCustomer.CustomerID" class="btn btn-warning active">Edit</a>
+
+                </td>
+                <td>
+                    <a asp-action="Delete" asp-route-id="@item.TheCustomer.CustomerID" class="btn btn-danger active">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+
+</table>
+
+<a  asp-controller="Customer" asp-action="Create" class="btn btn-primary">Add Customer</a>

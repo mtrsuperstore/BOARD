@@ -1,0 +1,38 @@
+﻿
+@{
+    ViewData["Title"] = "DeleteSale";
+}
+
+@*<h2>Delete Sale</h2>
+<h3>Are you sure you want to delete this sale?</h3>
+<div>
+    <h4>Sale</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.SalesTotal)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.DateEntered)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.SalesDate)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.SalesTotal)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.DateEntered)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.SalesDate)
+        </dd>
+    </dl>
+
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="SalesID" />
+        <input type="submit" value="Delete" class="btn btn-default" /> |
+        <a asp-action="Sales">Back to List</a>
+    </form>
+</div>*@
+

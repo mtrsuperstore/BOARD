@@ -1,0 +1,80 @@
+﻿@model IEnumerable<MTRProject.Models.WeeklySaleItem>
+
+<h2>Current Items on Sale</h2>
+
+@if (Model.Count() == 0)
+{
+    <h3>There are no sales currently entered for this week</h3>
+
+}
+else
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    <p> Item # </p>
+                </th>
+                <th>
+                    <p>Item Name</p>
+                </th>
+                <th>
+                    <p>Cost</p>
+                </th>
+                <th>
+                    <p>Sale Price</p>
+                </th>
+                <th>
+                    <p>Commission Rate</p>
+                </th>
+                <th>
+                    <p>Sale Start</p>
+                </th>
+                <th>
+                    <p>Sale End</p>
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ItemNumber)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ItemName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Cost)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.SalePrice)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.CommissionRate)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.SaleStart)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.SaleEnd)
+                    </td>
+                    <td>
+                        <a asp-action="Edit" asp-route-id="@item.WeeklySaleItemID" class="btn btn-warning active">Edit</a>
+
+                    </td>
+                    <td>
+                        <a asp-action="Delete" asp-route-id="@item.WeeklySaleItemID" class="btn btn-danger active">Delete</a>
+                    </td>
+                </tr>
+            }
+          </tbody>
+       </table>
+   
+
+}
+
+<a asp-action="Create" class="btn btn-primary active">Add Sale Item(s)</a>
+<a asp-action="SeeAll" class="btn btn-primary active">See Previous Sale Items</a>
+

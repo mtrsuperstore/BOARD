@@ -1,0 +1,42 @@
+﻿@model MTRProject.Models.Sale
+
+
+
+<body>
+    <div style="position:relative; left:30%;">
+        <h4>Sale</h4>
+        <hr />
+        <div class="row">
+            <div class="col-md-4">
+                <form asp-action="Edit">
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                    <input type="hidden" asp-for="SaleID" />
+                    <div class="form-group">
+                        <label asp-for="SaleTotal" class="control-label">Total</label>
+                        <input asp-for="SaleTotal" class="form-control" />
+                        <span asp-validation-for="SaleTotal" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="DateEntered" class="control-label"></label>
+                        <input asp-for="DateEntered" class="form-control" type="date" />
+                        <span asp-validation-for="DateEntered" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="SaleDate" class="control-label"></label>
+                        <input asp-for="SaleDate" class="form-control" type="date" />
+                        <span asp-validation-for="SaleDate" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <input type="submit" value="Save" class="btn btn-default" />
+                    </div>
+                </form>
+                </div>
+            </div>
+
+        @section Scripts {
+            @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+        }
+        </div>
+</body>
+
+

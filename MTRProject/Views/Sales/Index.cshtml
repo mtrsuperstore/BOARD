@@ -1,0 +1,55 @@
+﻿@model List<MTRProject.Models.SaleViewModel>
+
+
+<table class="table ">
+    <thead>
+        <tr>
+            <th>
+                <!--Html.DisplayNameFor(model => model.SaleTotal)-->
+                Sale Total
+            </th>
+            <th>
+                <!--Html.DisplayNameFor(model => model.DateEntered)-->
+                Date Entered
+            </th>
+            <th>
+                <!--Html.DisplayNameFor(model => model.SaleDate)-->
+                Sale Date
+            </th>
+            <th>
+                Actions
+            </th>
+        </tr>
+ 
+    <tbody>
+      
+        @foreach (var item in Model)
+
+        {
+        <tr>
+            <td>
+               $@Html.DisplayFor(modelItem => item.TheSale.SaleTotal)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TheSale.DateEntered)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TheSale.SaleDate)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.TheSale.SaleID" class="btn btn-warning active">Edit</a>
+                <a asp-action="Delete" asp-route-id="@item.TheSale.SaleID" class="btn btn-danger active">Delete</a>
+            </td>
+            @*<td>
+                <a asp-action="Details" asp-route-id="@item.SaleID" class="btn btn-danger active">Show Details</a>
+            </td>*@
+        </tr>
+
+        }
+
+    </tbody>
+    
+</table>
+
+<a asp-area="" asp-controller="Sales" asp-action="Create" class="btn btn-primary">Add New Sale</a>
+<a asp-area="" asp-controller="Sales" asp-action="Summary" class="btn btn-primary">Summary</a>

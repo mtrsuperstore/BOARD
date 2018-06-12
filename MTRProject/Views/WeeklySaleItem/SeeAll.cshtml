@@ -1,0 +1,60 @@
+﻿@model IEnumerable<MTRProject.Models.WeeklySaleItem>
+
+    <h2>All Weekly Sale Items</h2>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    <p> Item # </p>
+                </th>
+                <th>
+                    <p>Item Name</p>
+               </th>
+                <th>
+                    <p>Cost</p>
+                </th>
+                <th>
+                    <p>Sale Price</p>
+                </th>
+                <th>
+                    <p>Commission Rate</p>
+                </th>
+                <th>
+                    <p>Sale Start</p>
+                </th>
+                <th>
+                    <p>Sale End</p>
+                </th>
+            </tr>
+        </thead>
+        <tbody>@foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ItemNumber)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ItemName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Cost)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.SalePrice)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CommissionRate)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.SaleStart)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.SaleEnd)
+                </td>
+            </tr>
+        }
+        </tbody>
+    </table>
+    <div id="buttons">
+        <a asp-action="Index" class="btn btn-primary active">Current Week Sales</a>
+    </div>
